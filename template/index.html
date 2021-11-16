@@ -11,13 +11,44 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    Nous utilisons Node.js <span id="node-version"></span>, Chromium
-    <span id="chrome-version"></span>, et Electron
-    <span id="electron-version"></span>.
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12"><h1>Hello World!</h1></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <table>
+            <caption>Your mods</caption>
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Version</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td data-label="Name">ENB</td>
+              <td data-label="Version">v1.43.12</td>
+              <td data-label="Status">Disabled</td>
+              <td data-label="Actions"><a href="#">Enable</a></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Immersive Armors</td>
+              <td data-label="Version">v1.13.69</td>
+              <td data-label="Status">Enabled</td>
+              <td data-label="Actions"><a href="#">Disable</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
     <script src="../dist/renderer.js"></script>
   </body>
