@@ -5,11 +5,17 @@
   "main": "dist/main.js",
   "scripts": {
     "start": "electron-forge start",
-    "build:dev": "tsc --watch",
+    "build": "npm run create:public && npm run install:templates && npm run build:css && npm run build:dev:watch",
+    "create:public": "mkdir -p ./public/assets",
+    "install:templates": "cp ./template/*.html ./public",
+    "build:css": "node-sass ./template/assets -o ./public/assets",
+    "build:css:watch": "node-sass --watch ./template/assets -o ./public/assets",
+    "build:dev": "tsc",
+    "build:dev:watch": "tsc --watch",
     "test": "npm run test",
     "lint": "eslint --ext .ts src/",
     "format-check": "npx prettier --check \"**/*.+(ts|json|html)\"",
-    "format": "npx prettier --write \"**/*.+(ts|json|html)\"",
+    "format": "prettier --write \"**/*.+(ts|json|html)\"",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
@@ -26,6 +32,7 @@
     "electron": "15.3.0",
     "eslint": "8.1.0",
     "eslint-config-prettier": "8.3.0",
+    "node-sass": "6.0.1",
     "prettier": "2.4.1",
     "typescript": "4.4.4"
   },

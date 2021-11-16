@@ -10,7 +10,7 @@ function createWindow() {
     },
   });
 
-  win.loadFile("template/index.html");
+  win.loadFile("public/index.html");
 }
 
 // Windaube & Linux
